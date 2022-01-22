@@ -15,6 +15,9 @@ describe(UniqueIdService.name, () => {
     expect(service).toBeTruthy();
   });
 
+  /**
+   * Essa é a maneira mais elegante de declarar o nome do método que está testando, se fosse um metodo privado deveria ser escrito da seguinte forma: #${UniqueIdService.prototype.['generateUniqueIdWithPrefix'].name}
+   */
   it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} should generate id when called with prefix`, () => {
     const id = service.generateUniqueIdWithPrefix('app');
     expect(id.startsWith('app-')).toBeTrue();
